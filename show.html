@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="images/logo.png" class="brand-logo" alt="" />
+      <ul class="nav-links">
+        <li class="nav-items"><a href="#">TV</a></li>
+        <li class="nav-items"><a href="#">movies</a></li>
+        <li class="nav-items"><a href="#">sports</a></li>
+        <li class="nav-items"><a href="#">Premium</a></li>
+      </ul>
+
+      <div class="right-container">
+        <input type="text" class="search-box" placeholder="search" />
+        <button class="sub-btn">subscribe</button>
+        <a href="#" class="login-link">Login</a>
+      </div>
+    </nav>
+    <div class="details">
+      <img class="movie-image" src="" alt="Movie Poster" />
+      <div class="container">
+        <h1 id="movieTitle"></h1>
+        <h1 id="movieYear"></h1>
+        <h1 id="movieDirector"></h1>
+        <h1 id="movieRating"></h1>
+        <h1 id="movieGenre"></h1>
+      </div>
+    </div>
+
+    <script>
+      // Parse movie title from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const movieTitle = urlParams.get("movie").replace(/_/g, " ");
+      const movieYear = Math.floor(Math.random() * 24) + 2000;
+      const Rating = Math.floor(Math.random() * 10) + 1;
+
+      // Set movie details
+      document.getElementById("movieTitle").innerText = "Title: " + movieTitle;
+      document.getElementById("movieYear").innerText = "Year: " + movieYear;
+      document.getElementById("movieDirector").innerText =
+        "Director: Joss Whedon";
+      document.getElementById("movieRating").innerText =
+        "IMDb Rating: " + Rating + "/10";
+      document.getElementById("movieGenre").innerText =
+        "Genre: Action, Adventure, Sci-Fi";
+
+      // Set movie image
+      const movieImage = document.querySelector(".movie-image");
+      movieImage.src = `images/${urlParams.get("movie")}.png`; // Assuming the images are stored in a folder named 'images'
+      movieImage.alt = `${movieTitle} Poster`;
+    </script>
+  </body>
+</html>
