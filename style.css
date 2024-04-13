@@ -156,14 +156,14 @@ body {
 }
 
 .video-card-container {
-  /* Remove height and flex properties */
   width: 100%;
   margin-bottom: 20px;
   overflow-x: auto;
-  overflow-y: hidden; /* Change overflow-y to hidden */
+  overflow-y: hidden;
   scroll-behavior: smooth;
-  white-space: nowrap; /* Add white-space: nowrap; to prevent wrapping */
+  white-space: nowrap;
   scrollbar-width: none;
+  margin-left: 40px;
 }
 
 .video-card {
@@ -173,9 +173,9 @@ body {
   border-radius: 5px;
   overflow: hidden;
   background: #030b17;
-  display: inline-block; /* Change display to inline-block */
+  display: inline-block;
   margin-right: 10px;
-  margin-bottom: 0; /* Remove bottom margin */
+  margin-bottom: 0;
 }
 
 .card-video,
